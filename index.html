@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Erik Alejandro Orozco Alcaraz — Computer Engineer & Full Stack Developer | Angular, Node.js, TypeScript, PHP, IT Infrastructure, Networking. Colima, México." />
+  <meta name="keywords" content="Full Stack Developer, Ingeniero Informático, Angular, Node.js, TypeScript, PHP, SQL, Redes, Colima, México, Portafolio" />
+  <meta name="author" content="Erik Alejandro Orozco Alcaraz" />
+  <meta property="og:title" content="Erik Orozco — Full Stack Developer" />
+  <meta property="og:description" content="Computer Engineer & Full Stack Developer specialized in web development, IT infrastructure and networking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="ERIK.jpeg" />
+  <meta name="theme-color" content="#030305" />
+  <title>Erik Orozco | Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ BOOT SCREEN ═══════════════════════════ -->
+  <div class="boot-screen" id="bootScreen" aria-hidden="true">
+    <div class="boot-terminal">
+      <div class="boot-titlebar">
+        <span class="boot-dot red"></span>
+        <span class="boot-dot yellow"></span>
+        <span class="boot-dot green"></span>
+        <span class="boot-title">erik@portfolio: ~</span>
+      </div>
+      <div class="boot-output" id="bootOutput"></div>
+    </div>
+    <span class="boot-skip" data-es="click para saltar">click to skip</span>
+  </div>
+
+  <!-- ═══════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">EO<span class="accent-dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero"       class="nav-link active" data-es="Inicio">Home</a></li>
+        <li><a href="#about"      class="nav-link" data-es="Sobre Mí">About Me</a></li>
+        <li><a href="#tech"       class="nav-link" data-es="Tecnologías">Tech Stack</a></li>
+        <li><a href="#experience" class="nav-link" data-es="Experiencia">Experience</a></li>
+        <li><a href="#projects"   class="nav-link" data-es="Proyectos">Projects</a></li>
+        <li><a href="#education"  class="nav-link" data-es="Educación">Education</a></li>
+        <li><a href="#contact"    class="nav-link" data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language / Cambiar idioma">ES</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════ HERO ══════════════════════════════ -->
+  <section id="hero" class="hero">
+    <canvas id="particles" class="particles-canvas" aria-hidden="true"></canvas>
+    <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+    <div class="hero-container">
+      <!-- Left: text -->
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span data-es="Disponible para nuevos proyectos">Available for new projects</span>
+        </div>
+        <h1 class="hero-name">
+          Erik Alejandro<br>
+          <span class="gradient-text">Orozco Alcaraz</span>
+        </h1>
+        <p class="hero-title" id="heroTitle"><span id="typeText"></span><span class="type-cursor" aria-hidden="true">|</span></p>
+        <p class="hero-subtitle" data-es="Construyendo soluciones digitales robustas y escalables desde Colima, México.">Building robust, scalable digital solutions from Colima, México.</p>
+        <div class="hero-actions">
+          <a href="CV.pdf" class="btn btn-primary" download>
+            <i class="fas fa-download" aria-hidden="true"></i> <span data-es="Descargar CV">Download CV</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> <span data-es="Contactarme">Contact Me</span>
+          </a>
+        </div>
+        <div class="hero-social">
+          <a href="https://wa.me/523121336288" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="mailto:orozcoalcarazerik@gmail.com" class="social-icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: photo -->
+      <div class="hero-image-wrapper">
+        <div class="hero-image-container">
+          <div class="image-ring image-ring-1" aria-hidden="true"></div>
+          <div class="image-ring image-ring-2" aria-hidden="true"></div>
+          <div class="image-ring image-ring-3" aria-hidden="true"></div>
+          <img
+            src="ERIK.jpeg"
+            alt="Erik Alejandro Orozco Alcaraz"
+            class="hero-photo"
+            onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex'"
+          />
+          <div class="hero-photo-fallback" id="photoFallback" aria-hidden="true">
+            <i class="fas fa-user"></i>
+          </div>
+        </div>
+        <div class="floating-card card-1" aria-hidden="true">
+          <i class="fas fa-code"></i><span>Full Stack</span>
+        </div>
+        <div class="floating-card card-2" aria-hidden="true">
+          <i class="fas fa-server"></i><span data-es="Infraestructura">Infrastructure</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating code tokens (spawned by JS) -->
+    <div class="code-tokens-layer" id="codeTokensLayer" aria-hidden="true"></div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════ SOBRE MÍ ════════════════════════════ -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// sobre mí">// about me</span>
+        <h2 class="section-title" data-es="Quién soy">Who I Am</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text animate-on-scroll">
+          <p data-es="Ingeniero Informático con perfil multidisciplinario en desarrollo de software, redes, telecomunicaciones e infraestructura tecnológica. Experiencia en desarrollo de aplicaciones web, administración de servidores, integración de sistemas y resolución de incidencias técnicas en entornos reales.">Computer Engineer with a multidisciplinary background in software development, networking, telecommunications and IT infrastructure. Experienced in building web applications, managing servers, integrating systems and resolving technical incidents in real-world environments.</p>
+          <p data-es="Con conocimientos en Angular, Node.js, TypeScript, PHP, SQL, redes e infraestructura tecnológica. Capacidad para adaptarse rápidamente a nuevos entornos y desarrollar soluciones eficientes orientadas a la optimización de procesos.">Skilled in Angular, Node.js, TypeScript, PHP, SQL, networking and IT infrastructure. Able to adapt quickly to new environments and build efficient solutions focused on process optimization.</p>
+          <p data-es='Integro herramientas de inteligencia artificial como <strong>Claude</strong>, <strong>Codex</strong> y <strong>Antigravity</strong> en mi flujo de trabajo diario para acelerar el desarrollo, automatizar tareas y elevar la calidad del código.'>I integrate artificial intelligence tools such as <strong>Claude</strong>, <strong>Codex</strong> and <strong>Antigravity</strong> into my daily workflow to speed up development, automate tasks and raise code quality.</p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <strong>TecNM Campus Colima</strong>
+                <span data-es="Ingeniería Informática — Titulado">Computer Engineering — Degree Holder</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>Colima, México</strong>
+                <span data-es="Disponible para trabajo remoto">Available for remote work</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-certificate"></i></div>
+              <div>
+                <strong data-es="Cédula Profesional: 15629675">Professional License: 15629675</strong>
+                <span data-es="Ingeniería Informática">Computer Engineering</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid animate-on-scroll">
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-number" data-target="3">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label" data-es='Años de<br>Experiencia'>Years of<br>Experience</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">
+              <span class="stat-number" data-target="20">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label" data-es='Proyectos<br>Desarrollados'>Projects<br>Developed</p>
+          </div>
+          <div class="stat-card stat-icon-card">
+            <i class="fas fa-layer-group stat-icon"></i>
+            <p class="stat-label-icon">Full Stack<br>Developer</p>
+          </div>
+          <div class="stat-card stat-icon-card">
+            <i class="fas fa-network-wired stat-icon"></i>
+            <p class="stat-label-icon" data-es='Redes e<br>Infraestructura'>Networks &amp;<br>Infrastructure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ TECNOLOGÍAS ═══════════════════════════ -->
+  <section id="tech" class="section tech">
+    <canvas id="matrixCanvas" class="matrix-canvas" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// tecnologías">// tech stack</span>
+        <h2 class="section-title" data-es="Stack Tecnológico">Tech Stack</h2>
+        <p class="section-description" data-es="Herramientas y tecnologías con las que trabajo día a día">Tools and technologies I work with every day</p>
+      </div>
+
+      <div class="tech-categories">
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-microchip"></i> <span data-es="IA &amp; Desarrollo Asistido">AI &amp; Assisted Development</span></h3>
+          <div class="tech-cards">
+            <div class="tech-card ai-card">
+              <div class="tech-icon-custom" style="background:rgba(217,119,87,.15);color:#d97757">
+                <i class="fas fa-star-of-life"></i>
+              </div>
+              <span>Claude</span>
+            </div>
+            <div class="tech-card ai-card">
+              <div class="tech-icon-custom" style="background:rgba(16,163,127,.15);color:#10a37f">
+                <i class="fas fa-terminal"></i>
+              </div>
+              <span>Codex</span>
+            </div>
+            <div class="tech-card ai-card">
+              <div class="tech-icon-custom" style="background:rgba(66,133,244,.15);color:#4285f4">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <span>Antigravity</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-desktop"></i> Frontend</h3>
+          <div class="tech-cards">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg" alt="Angular" loading="lazy">
+              <span>Angular</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript" loading="lazy">
+              <span>TypeScript</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy">
+              <span>JavaScript</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" loading="lazy">
+              <span>HTML5</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="lazy">
+              <span>CSS3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-server"></i> Backend</h3>
+          <div class="tech-cards">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" loading="lazy">
+              <span>Node.js</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" loading="lazy">
+              <span>PHP</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(6,182,212,.15);color:#06b6d4">
+                <i class="fas fa-plug"></i>
+              </div>
+              <span>REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-database"></i> <span data-es="Bases de Datos">Databases</span></h3>
+          <div class="tech-cards">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL" loading="lazy">
+              <span>MySQL</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" loading="lazy">
+              <span>SQL Server</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-network-wired"></i> <span data-es="Infraestructura">Infrastructure</span></h3>
+          <div class="tech-cards">
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux" loading="lazy">
+              <span>Linux</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg" alt="Windows Server" loading="lazy">
+              <span>Windows Server</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git" loading="lazy">
+              <span>Git</span>
+            </div>
+            <div class="tech-card">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="lazy" class="invert-icon">
+              <span>GitHub</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(34,197,94,.15);color:#22c55e">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <span>Hosting</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(249,115,22,.15);color:#f97316">
+                <i class="fas fa-globe"></i>
+              </div>
+              <span data-es="Redes">Networks</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-category animate-on-scroll">
+          <h3 class="tech-cat-title"><i class="fas fa-tower-broadcast"></i> <span data-es="Telecomunicaciones">Telecommunications</span></h3>
+          <div class="tech-cards">
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(239,68,68,.15);color:#ef4444">
+                <i class="fas fa-router"></i>
+              </div>
+              <span>MikroTik</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(59,130,246,.15);color:#3b82f6">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <span>Ubiquiti</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(168,85,247,.15);color:#a855f7">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <span>LAN</span>
+            </div>
+            <div class="tech-card">
+              <div class="tech-icon-custom" style="background:rgba(234,179,8,.15);color:#eab308">
+                <i class="fas fa-satellite-dish"></i>
+              </div>
+              <span>WISP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ EXPERIENCIA ══════════════════════════ -->
+  <section id="experience" class="section experience">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// experiencia">// experience</span>
+        <h2 class="section-title" data-es="Trayectoria Profesional">Professional Journey</h2>
+      </div>
+
+      <div class="timeline">
+
+        <!-- STJ Colima -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-info">
+                <div class="company-icon"><i class="fas fa-landmark"></i></div>
+                <div>
+                  <h3 class="timeline-role" data-es="Ingeniero Informático / Desarrollador Full Stack">Computer Engineer / Full Stack Developer</h3>
+                  <p class="timeline-company-name">Supremo Tribunal de Justicia del Estado de Colima</p>
+                </div>
+              </div>
+              <span class="period-badge" data-es="2023 — Actualidad">2023 — Present</span>
+            </div>
+            <ul class="timeline-duties">
+              <li data-es="Desarrollo y mantenimiento de sistemas institucionales">Development and maintenance of institutional systems</li>
+              <li data-es="Plataforma de proveedores institucionales">Institutional suppliers platform</li>
+              <li data-es="Plataforma de registro y gestión de edictos">Court notices registration and management platform</li>
+              <li data-es="Desarrollo Angular, TypeScript, Node.js y PHP">Development with Angular, TypeScript, Node.js and PHP</li>
+              <li data-es="Bases de datos SQL">SQL databases</li>
+              <li data-es="Integración de servicios y automatización de procesos">Service integration and process automation</li>
+              <li data-es="Soporte técnico e infraestructura">Technical support and infrastructure</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freelance -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-info">
+                <div class="company-icon"><i class="fas fa-laptop-code"></i></div>
+                <div>
+                  <h3 class="timeline-role" data-es="Desarrollador Web Freelance">Freelance Web Developer</h3>
+                  <p class="timeline-company-name" data-es="Proyectos independientes">Independent projects</p>
+                </div>
+              </div>
+              <span class="period-badge" data-es="2023 — Actualidad">2023 — Present</span>
+            </div>
+            <ul class="timeline-duties">
+              <li data-es="Desarrollo de sitios web y tiendas en línea">Websites and online stores development</li>
+              <li data-es="Invitaciones digitales">Digital invitations</li>
+              <li data-es="Gestión de hosting y dominios">Hosting and domain management</li>
+              <li data-es="APIs REST">REST APIs</li>
+              <li data-es="Optimización de rendimiento web">Web performance optimization</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">PHP</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Hosting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Técnico Electricista -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-info">
+                <div class="company-icon"><i class="fas fa-bolt"></i></div>
+                <div>
+                  <h3 class="timeline-role" data-es="Técnico Electricista y Soporte Técnico">Electrical Technician &amp; Technical Support</h3>
+                  <p class="timeline-company-name" data-es="Servicios técnicos especializados">Specialized technical services</p>
+                </div>
+              </div>
+              <span class="period-badge" data-es="2022 — Actualidad">2022 — Present</span>
+            </div>
+            <ul class="timeline-duties">
+              <li data-es="Instalaciones eléctricas y diagnóstico de fallas">Electrical installations and fault diagnosis</li>
+              <li data-es="Mantenimiento preventivo y correctivo">Preventive and corrective maintenance</li>
+              <li data-es="Soporte técnico especializado">Specialized technical support</li>
+              <li data-es="Infraestructura tecnológica">Technology infrastructure</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag" data-es="Soporte Técnico">Tech Support</span>
+              <span class="tag" data-es="Infraestructura">Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-company-info">
+                <div class="company-icon"><i class="fas fa-tower-broadcast"></i></div>
+                <div>
+                  <h3 class="timeline-role" data-es="Redes y Telecomunicaciones">Networks &amp; Telecommunications</h3>
+                  <p class="timeline-company-name" data-es="Proyectos de conectividad">Connectivity projects</p>
+                </div>
+              </div>
+              <span class="period-badge" data-es="Continuo">Ongoing</span>
+            </div>
+            <ul class="timeline-duties">
+              <li data-es="Redes WISP con MikroTik y Ubiquiti">WISP networks with MikroTik and Ubiquiti</li>
+              <li data-es="Redes LAN y Access Points">LAN networks and Access Points</li>
+              <li data-es="Cableado estructurado">Structured cabling</li>
+              <li data-es="Telecomunicaciones generales">General telecommunications</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">MikroTik</span>
+              <span class="tag">Ubiquiti</span>
+              <span class="tag">WISP</span>
+              <span class="tag">LAN</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ PROYECTOS ════════════════════════════ -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// proyectos">// projects</span>
+        <h2 class="section-title" data-es="Proyectos Destacados">Featured Projects</h2>
+        <p class="section-description" data-es="Algunos de los proyectos que he desarrollado">Some of the projects I have built</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-preview" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+              <i class="fas fa-wine-glass" aria-hidden="true"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://www.colimaeventosybanquetes.com" target="_blank" rel="noopener noreferrer" class="project-link-overlay">
+                <i class="fas fa-external-link-alt"></i> <span data-es="Ver proyecto">View project</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">01</span>
+            <h3 class="project-title">Colima Eventos y Banquetes</h3>
+            <p class="project-description" data-es="Sitio web profesional para empresa de eventos y banquetes. Diseño elegante con galería de servicios y formulario de contacto.">Professional website for an events and banquets company. Elegant design with a services gallery and contact form.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Web Design</span>
+            </div>
+            <a href="https://www.colimaeventosybanquetes.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <span data-es="Ver proyecto">View project</span> <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-preview" style="background:linear-gradient(135deg,#0f2027,#203a43,#2c5364)">
+              <i class="fas fa-gavel" aria-hidden="true"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://sias.stjdigitalcolima.gob.mx/adquisiciones" target="_blank" rel="noopener noreferrer" class="project-link-overlay">
+                <i class="fas fa-external-link-alt"></i> <span data-es="Ver proyecto">View project</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">02</span>
+            <h3 class="project-title" data-es="SIAS — Plataforma Institucional">SIAS — Institutional Platform</h3>
+            <p class="project-description" data-es="Sistema institucional de adquisiciones para el Supremo Tribunal de Justicia de Colima. Gestión de proveedores, edictos y procesos gubernamentales.">Institutional procurement system for the Supreme Court of Justice of Colima. Management of suppliers, court notices and government processes.</p>
+            <div class="project-tags">
+              <span class="tag">Angular</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">SQL</span>
+            </div>
+            <a href="https://sias.stjdigitalcolima.gob.mx/adquisiciones" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <span data-es="Ver proyecto">View project</span> <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card animate-on-scroll">
+          <div class="project-image">
+            <div class="project-preview" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+              <i class="fas fa-flask" aria-hidden="true"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://nevparfums.com" target="_blank" rel="noopener noreferrer" class="project-link-overlay">
+                <i class="fas fa-external-link-alt"></i> <span data-es="Ver proyecto">View project</span>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">03</span>
+            <h3 class="project-title" data-es="NEV Parfums — Tienda en Línea">NEV Parfums — Online Store</h3>
+            <p class="project-description" data-es="E-commerce de perfumería de alta gama. Catálogo de productos, carrito de compras y experiencia de usuario premium.">High-end perfumery e-commerce. Product catalog, shopping cart and a premium user experience.</p>
+            <div class="project-tags">
+              <span class="tag">E-Commerce</span>
+              <span class="tag">PHP</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <a href="https://nevparfums.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+              <span data-es="Ver proyecto">View project</span> <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ EDUCACIÓN ════════════════════════════ -->
+  <section id="education" class="section education">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// educación">// education</span>
+        <h2 class="section-title" data-es="Formación Académica">Academic Background</h2>
+      </div>
+      <div class="education-card animate-on-scroll">
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div class="edu-content">
+          <div class="edu-header">
+            <div>
+              <h3 class="edu-degree" data-es="Ingeniería Informática">Computer Engineering</h3>
+              <p class="edu-institution">TecNM Campus Colima</p>
+              <p class="edu-specialty" data-es="Especialidad: Tecnologías y Aplicaciones Multiplataforma">Specialty: Multiplatform Technologies &amp; Applications</p>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-period">2017 — 2023</span>
+              <span class="edu-status" data-es="Titulado">Graduate</span>
+            </div>
+          </div>
+          <div class="edu-details">
+            <div class="edu-detail-item">
+              <i class="fas fa-id-card"></i>
+              <span data-es='Cédula Profesional: <strong>15629675</strong>'>Professional License: <strong>15629675</strong></span>
+            </div>
+            <div class="edu-detail-item">
+              <i class="fas fa-star"></i>
+              <span data-es="Titulado con especialidad en tecnologías multiplataforma">Graduated with a specialty in multiplatform technologies</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ OBJETIVO PROF. ═════════════════════════ -->
+  <section id="objective" class="section objective">
+    <div class="container">
+      <div class="objective-content animate-on-scroll">
+        <div class="objective-icon"><i class="fas fa-rocket"></i></div>
+        <h2 class="objective-title" data-es="Objetivo Profesional">Professional Goal</h2>
+        <p class="objective-text" data-es="Desarrollarme profesionalmente en proyectos de desarrollo de software, infraestructura tecnológica y redes, aportando soluciones eficientes e innovadoras mediante mis conocimientos en programación, telecomunicaciones y soporte técnico especializado.">To grow professionally in software development, IT infrastructure and networking projects, delivering efficient and innovative solutions through my knowledge of programming, telecommunications and specialized technical support.</p>
+        <a href="#contact" class="btn btn-primary">
+          <i class="fas fa-paper-plane"></i> <span data-es="Hablemos">Let's Talk</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACTO ══════════════════════════════ -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="section-tag" data-es="// contacto">// contact</span>
+        <h2 class="section-title" data-es="Trabajemos Juntos">Let's Work Together</h2>
+        <p class="section-description" data-es="¿Tienes un proyecto en mente? Estoy disponible para nuevas oportunidades">Have a project in mind? I'm available for new opportunities</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info animate-on-scroll">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-details">
+              <span class="contact-label" data-es="Teléfono">Phone</span>
+              <a href="tel:+523121336288" class="contact-value">(312) 133-6288</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <span class="contact-label" data-es="Correo">Email</span>
+              <a href="mailto:orozcoalcarazerik@gmail.com" class="contact-value">orozcoalcarazerik@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="contact-details">
+              <span class="contact-label">WhatsApp</span>
+              <a href="https://wa.me/523121336288" target="_blank" rel="noopener noreferrer" class="contact-value">(312) 133-6288</a>
+            </div>
+          </div>
+          <div class="contact-social-row">
+            <a href="https://wa.me/523121336288" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp-btn">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper animate-on-scroll">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" data-es="Nombre">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" data-es-placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="email" data-es="Correo">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@email.com" data-es-placeholder="tu@correo.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject" data-es="Asunto">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="How can I help you?" data-es-placeholder="¿En qué puedo ayudarte?" />
+            </div>
+            <div class="form-group">
+              <label for="message" data-es="Mensaje">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." data-es-placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> <span data-es="Enviar Mensaje">Send Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">EO<span class="accent-dot">.</span></div>
+        <p class="footer-text">Erik Alejandro Orozco Alcaraz &nbsp;·&nbsp; Full Stack Developer</p>
+        <div class="footer-social">
+          <a href="https://wa.me/523121336288" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:orozcoalcarazerik@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="currentYear"></span> Erik Orozco. <span data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
