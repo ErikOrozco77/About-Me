@@ -9,18 +9,18 @@ export default [
     title: "Colima Eventos y Banquetes",
     slug: "colima-eventos",
     thumbnail: thumbnailColimaEventos,
-    description: "Elegant event banquets website",
+    description: "Sitio web elegante para eventos y banquetes",
   },
   {
-    title: "SIAS — Institutional Platform",
+    title: "SIAS — Plataforma Institucional",
     slug: "sias",
     thumbnail: thumbnailSias,
-    description: "Government procurement system",
+    description: "Sistema institucional de adquisiciones",
   },
   {
-    title: "NEV Parfums — Online Store",
+    title: "NEV Parfums — Tienda en Línea",
     slug: "nev-parfums",
     thumbnail: thumbnailNevParfums,
-    description: "Premium fragrance e-commerce store",
+    description: "E-commerce de perfumería de alta gama",
   },
 ] as const satisfies ProjectPreview[];

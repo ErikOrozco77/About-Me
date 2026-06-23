@@ -45,7 +45,7 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
           <div class="footer-top-links-legal">
             <Clickable renderAs="div">
               <Link
-                :href="locale === 'de' ? '/de/privacy' : '/privacy'"
+                :href="locale === 'es' ? '/es/privacy' : '/privacy'"
                 class="footer-link"
                 :external="true"
                 data-cursor="circle-white"
@@ -56,7 +56,7 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
             </Clickable>
             <Clickable renderAs="div">
               <Link
-                :href="locale === 'de' ? '/de/legal' : '/legal'"
+                :href="locale === 'es' ? '/es/legal' : '/legal'"
                 class="footer-link children-unclickable"
                 :external="true"
                 data-cursor="circle-white"
@@ -100,7 +100,7 @@ const showAttribution = import.meta.env.VITE_SHOW_ATTRIBUTION !== "false";
             >
           </Clickable>
         </div>
-        <p>© {{ new Date().getFullYear() }} David Heckhoff</p>
+        <p>© {{ new Date().getFullYear() }} Erik Alejandro Orozco Alcaraz</p>
       </div>
     </div>
   </footer>

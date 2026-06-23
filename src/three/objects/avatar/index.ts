@@ -49,6 +49,7 @@ const getMaterial = (name: string): Material | null => {
       transparent: true,
       uniforms: {
         uHeadTexture: { value: texture },
+        uTint: { value: new Vector3(0.55, 0.38, 0.28) }, // Rich brown skin tone
         ...uniforms,
       },
     });
@@ -64,6 +65,7 @@ const getMaterial = (name: string): Material | null => {
     transparent: true,
     uniforms: {
       uMatcap: { value: tex },
+      uTint: { value: new Vector3(1.0, 1.0, 1.0) },
       ...uniforms,
     },
   });
@@ -110,6 +112,11 @@ const setupMesh = () => {
       if (hasMatcap) {
         child.onBeforeRender = () => {
           child.material.uniforms.uMatcap.value = child.userData.matcap;
+          if (child.name === "skin") {
+            child.material.uniforms.uTint.value.set(0.55, 0.38, 0.28);
+          } else {
+            child.material.uniforms.uTint.value.set(1.0, 1.0, 1.0);
+          }
         };
       }
     }
