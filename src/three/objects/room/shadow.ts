@@ -1,13 +1,12 @@
 import { resources } from "../../../utils/resources";
 import { room } from ".";
 import { getShadowMaterial } from "../../common/materials";
-import { colors } from "../../common/colors";
 import { Color } from "three";
 
 import type { Object3D } from "three";
 
-const backgroundColor = colors.beigeLight.clone().convertLinearToSRGB();
-const shadowColor = new Color("rgb(215, 194, 169)");
+const backgroundColor = new Color("#030305").convertLinearToSRGB();
+const shadowColor = new Color("#000000");
 
 const init = () => {
   initObjects();

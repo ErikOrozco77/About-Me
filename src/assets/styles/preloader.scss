@@ -1,45 +1,101 @@
-.preloader {
+body.boot-lock { overflow: hidden; }
+
+.boot-screen {
   position: fixed;
+  inset: 0;
   z-index: var(--z-index-preloader);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-beige-400);
+  background: #020208;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: opacity 0.3s ease-in-out;
-  opacity: 1;
+  justify-content: center;
+  gap: 18px;
+  cursor: pointer;
+}
 
-  &-svg {
-    width: 120px;
-    height: 120px;
-    transition:
-      transform 0.2s var(--ease-power2-in),
-      opacity 0.2s var(--ease-power2-in);
+.boot-terminal {
+  width: min(560px, 90vw);
+  background: #05050f;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.15);
+  overflow: hidden;
+}
+
+.boot-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.boot-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.boot-dot.red {
+  background: #ef4444;
+}
+
+.boot-dot.yellow {
+  background: #eab308;
+}
+
+.boot-dot.green {
+  background: #22c55e;
+}
+
+.boot-title {
+  margin-left: 8px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  color: #475569;
+}
+
+.boot-output {
+  padding: 18px 18px 22px;
+  min-height: 150px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 12.5px;
+  line-height: 1.9;
+}
+
+.boot-line {
+  color: #22c55e;
+  white-space: pre-wrap;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.35);
+}
+
+.boot-line:first-child {
+  color: #a5b4fc;
+  text-shadow: 0 0 8px rgba(99, 102, 241, 0.4);
+}
+
+.boot-skip {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 11px;
+  color: #475569;
+  letter-spacing: 0.08em;
+  animation: bootPulse 2s ease-in-out infinite;
+}
+
+@keyframes bootPulse {
+  0%,
+  100% {
+    opacity: 1;
   }
-
-  &-rect {
-    transform-origin: bottom center;
-    transition: transform 0.3s ease-in-out;
+  50% {
+    opacity: 0.4;
   }
+}
 
-  &-path {
-    fill: var(--color-text-400);
-  }
-
-  &-hidden {
-    opacity: 0;
-    pointer-events: none !important;
-
-    * {
-      pointer-events: none !important;
-    }
-
-    svg {
-      transform: scale(0.4);
-      opacity: 0;
-    }
+@media (max-width: 600px) {
+  .boot-output {
+    min-height: 120px;
+    font-size: 11px;
   }
 }

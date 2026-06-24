@@ -4,6 +4,7 @@ import { contact } from "./contact";
 import { darkPlane } from "./dark-plane";
 import { gridFloor } from "./grid-floor";
 import { lab } from "./lab";
+import { nebula } from "./nebula";
 import { room } from "./room";
 import { sleepingSprite } from "./contact/sleeping-sprite";
 import { renderer } from "../core/renderer";
@@ -15,6 +16,7 @@ const init = () => {
   darkPlane.init();
   gridFloor.init();
   lab.init();
+  nebula.init();
   room.init();
   sleepingSprite.init();
 
@@ -28,6 +30,7 @@ const destroy = () => {
   darkPlane.destroy();
   gridFloor.destroy();
   lab.destroy();
+  nebula.destroy();
   room.destroy();
   sleepingSprite.destroy();
 };

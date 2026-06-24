@@ -6,6 +6,7 @@
 @use "./lenis.scss";
 @use "./projects.scss";
 @use "./preloader.scss";
+@use "./curriculum.scss";
 
 html {
   background: var(--color-background-400);
@@ -39,6 +40,7 @@ html {
   position: fixed;
   width: calc(var(--svw) * 100);
   height: calc(var(--svh) * 100);
+  background: #020208;
 }
 
 ::selection {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Header from "./components/Header.vue";
 import { useTranslations } from "./i18n/composables/useTranslations";
 import { usePreloader } from "./composables/usePreloader";
 import Cursor from "./components/Cursor.vue";
@@ -30,8 +29,6 @@ const { isTouch } = useAgent();
 </script>
 
 <template>
-  <Header />
-
   <!-- main page -->
   <div :class="{ 'home-wrapper-projectIsReady': projectVisible }">
     <Home />

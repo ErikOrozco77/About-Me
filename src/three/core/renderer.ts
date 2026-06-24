@@ -55,8 +55,7 @@ const tick = () => {
     renderTarget.render();
   }
 
-  const color = sceneWeights.contact > 0.001 ? colors.beigeDark : colors.beigeLight;
-  instance.setClearColor(color);
+  instance.setClearColor(colors.beigeLight);
   instance.render(scene.instance, camera.instance);
 };
 
